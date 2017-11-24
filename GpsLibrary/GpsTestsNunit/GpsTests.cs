@@ -8,6 +8,12 @@ using NUnit.Framework;
 
 namespace GpsTests
 {
+
+    /*
+     *Napisz bibliotekę w C#, która na podstawie danych wejściowych (miasto, ulica) zwróci współrzędne geograficzne
+     *przypisane do tego adresu. Do solucji dołącz Unit Tests, który przetestuje kod.
+     * */
+
     [TestFixture]
     public class GpsTests
     {
@@ -30,7 +36,8 @@ namespace GpsTests
         public void ShouldCompareLocationsWhenCityIsEmpty()
         {
             //given
-            var addresses = new AddressData() { City = "", Address = "Katarzynki 23" };
+            var addresses = new GpsAddress(new AddressData() { City = "", Address = "Katarzynki 23" });
+
             GpsApi gpsApi = new GpsGoogleOperation();
             //when
             Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(addresses.City, addresses.Address), "City cannot be empty");
@@ -40,7 +47,7 @@ namespace GpsTests
         public void ShouldCompareLocationsWhenCityIsNull()
         {
             //given
-            var addresses = new AddressData() { City = null, Address = "Katarzynki 23" };
+            var addresses = new GpsAddress(new AddressData(){City = null,Address = "Katarzynki 23"});
             GpsApi gpsApi = new GpsGoogleOperation();
             //when
             Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(addresses.City, addresses.Address), "City cannot be null");
@@ -50,7 +57,7 @@ namespace GpsTests
         public void ShouldCompareLocationsWhenCityIsWrong()
         {
             //given
-            var addresses = new AddressData() { City = "abc", Address = "Katarzynki 23" };
+            var addresses = new GpsAddress(new AddressData(){City = "abc", Address = "Katarzynki 23"});
             GpsApi gpsApi = new GpsGoogleOperation();
             //when
             Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(addresses.City, addresses.Address),"Bad city name" );
