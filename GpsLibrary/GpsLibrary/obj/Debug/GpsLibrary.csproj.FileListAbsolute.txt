@@ -1,0 +1,6 @@
+C:\Users\azakrzewski\Desktop\GpsProject\GpsLibrary\GpsLibrary\obj\Debug\GpsLibrary.csprojResolveAssemblyReference.cache
+C:\Users\azakrzewski\Desktop\GpsProject\GpsLibrary\GpsLibrary\bin\Debug\GpsLibrary.dll
+C:\Users\azakrzewski\Desktop\GpsProject\GpsLibrary\GpsLibrary\bin\Debug\GpsLibrary.pdb
+C:\Users\azakrzewski\Desktop\GpsProject\GpsLibrary\GpsLibrary\bin\Debug\GoogleMaps.LocationServices.dll
+C:\Users\azakrzewski\Desktop\GpsProject\GpsLibrary\GpsLibrary\obj\Debug\GpsLibrary.dll
+C:\Users\azakrzewski\Desktop\GpsProject\GpsLibrary\GpsLibrary\obj\Debug\GpsLibrary.pdb

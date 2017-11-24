@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsLibrary", "GpsLibrary\GpsLibrary.csproj", "{21B8126F-ECD9-4688-9B53-8E76692F5C55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsTests", "GpsTests\GpsTests.csproj", "{3193BD80-1E5F-4740-8779-B641F4AAA29A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsTestsNunit", "GpsTestsNunit\GpsTestsNunit.csproj", "{C8E26A5C-D9A8-409D-85CF-E4D2A38A739B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21B8126F-ECD9-4688-9B53-8E76692F5C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B8126F-ECD9-4688-9B53-8E76692F5C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B8126F-ECD9-4688-9B53-8E76692F5C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B8126F-ECD9-4688-9B53-8E76692F5C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3193BD80-1E5F-4740-8779-B641F4AAA29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3193BD80-1E5F-4740-8779-B641F4AAA29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3193BD80-1E5F-4740-8779-B641F4AAA29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3193BD80-1E5F-4740-8779-B641F4AAA29A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E26A5C-D9A8-409D-85CF-E4D2A38A739B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E26A5C-D9A8-409D-85CF-E4D2A38A739B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E26A5C-D9A8-409D-85CF-E4D2A38A739B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E26A5C-D9A8-409D-85CF-E4D2A38A739B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
