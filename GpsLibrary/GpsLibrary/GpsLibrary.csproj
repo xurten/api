@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\ApiConst.cs" />
+    <Compile Include="Api\GpsConst.cs" />
     <Compile Include="Exceptions\AddressException.cs" />
+    <Compile Include="Api\IGpsApi.cs" />
     <Compile Include="Api\GpsApi.cs" />
-    <Compile Include="Api\GpsGoogleOperation.cs" />
     <Compile Include="Model\GpsAddress.cs" />
     <Compile Include="Model\GpsPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

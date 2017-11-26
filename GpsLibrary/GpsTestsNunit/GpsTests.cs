@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using GoogleMaps.LocationServices;
-using GpsLibrary;
+﻿using GpsLibrary;
 using GpsLibrary.Exceptions;
-using GpsLibrary.Model;
+using GpsTestsNunit.Mocks;
 using NUnit.Framework;
 
 namespace GpsTests
@@ -17,50 +14,43 @@ namespace GpsTests
     [TestFixture]
     public class GpsTests
     {
+        private readonly IGpsApi gpsApi;
+
+        public GpsTests()
+        {
+            gpsApi = GpsMock.GetGpsApiMock();
+        }
+
         [Test]
         [TestCase(53.0382334, 18.690583, "Torun", "Katarzynki 23")]
         [TestCase(53.0295739, 18.6332549, "Torun", "Jaworskich 6")]
         [TestCase(53.01726, 11.55785, "Gummern 14", "Schnackenburg")]
         public void ShouldCompereGoodLocations(double latitude, double longitude, string city, string address)
         {
-            //given
-            GpsApi gpsApi = new GpsGoogleOperation();
-            //when
             var gpsLocalization = gpsApi.GetGpsLocationFromAddress(city, address);
-            //then
             Assert.AreEqual(latitude, gpsLocalization.Latitude);
             Assert.AreEqual(longitude, gpsLocalization.Longitude);
         }
 
         [Test]
-        public void ShouldCompareLocationsWhenCityIsEmpty()
+        [TestCase("", "Katarzynki 23")]
+        public void ShouldCompareLocationsWhenCityIsEmpty(string city, string address)
         {
-            //given
-            var addresses = new GpsAddress(new AddressData() { City = "", Address = "Katarzynki 23" });
-
-            GpsApi gpsApi = new GpsGoogleOperation();
-            //when
-            Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(addresses.City, addresses.Address), "City cannot be empty");
+            Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(city, address));
         }
 
         [Test]
-        public void ShouldCompareLocationsWhenCityIsNull()
+        [TestCase(null, "Katarzynki 23")]
+        public void ShouldCompareLocationsWhenCityIsNull(string city, string address)
         {
-            //given
-            var addresses = new GpsAddress(new AddressData(){City = null,Address = "Katarzynki 23"});
-            GpsApi gpsApi = new GpsGoogleOperation();
-            //when
-            Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(addresses.City, addresses.Address), "City cannot be null");
+            Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(city, address), "City cannot be null");
         }
 
         [Test]
-        public void ShouldCompareLocationsWhenCityIsWrong()
+        [TestCase("abc", "Katarzynki 23")]
+        public void ShouldCompareLocationsWhenCityIsWrong(string city, string address)
         {
-            //given
-            var addresses = new GpsAddress(new AddressData(){City = "abc", Address = "Katarzynki 23"});
-            GpsApi gpsApi = new GpsGoogleOperation();
-            //when
-            Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(addresses.City, addresses.Address),"Bad city name" );
+            Assert.Throws<AddressException>(() => gpsApi.GetGpsLocationFromAddress(city, address), "Bad city name");
         }
     }
 }
