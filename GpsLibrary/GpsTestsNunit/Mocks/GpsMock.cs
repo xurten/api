@@ -15,9 +15,11 @@ namespace GpsTestsNunit.Mocks
             mapPoint.Latitude = 53.0382334;
             mapPoint.Longitude = 18.690583;
             gpsApi.GetGpsLocationFromAddress("Torun", "Katarzynki 23").Returns(new GpsLibrary.Model.GpsPoint(mapPoint));
+            mapPoint = new MapPoint();
             mapPoint.Latitude = 53.0295739;
             mapPoint.Longitude = 18.6332549;
             gpsApi.GetGpsLocationFromAddress("Torun", "Jaworskich 6").Returns(new GpsLibrary.Model.GpsPoint(mapPoint));
+            mapPoint = new MapPoint();
             mapPoint.Latitude = 53.01726;
             mapPoint.Longitude = 11.55785;
             gpsApi.GetGpsLocationFromAddress("Gummern 14", "Schnackenburg").Returns(new GpsLibrary.Model.GpsPoint(mapPoint));
